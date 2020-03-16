@@ -1,0 +1,25 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "to do list application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SofiBretz/To-Do-List.git"
+  },
+  "author": "SofiBretz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SofiBretz/To-Do-List/issues"
+  },
+  "homepage": "https://github.com/SofiBretz/To-Do-List#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  }
+}
