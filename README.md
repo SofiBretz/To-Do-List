@@ -2,7 +2,7 @@
 
 >To Do List, creating modules on javascript using webpack.
 
-![screenshot](https://i.imgur.com/U8Ihq17.jpg)
+![screenshot]()
 
 The main goal of this project is understanding of the benefits of modularized code as well as the ability to set up a javascript application made of different modules using webpack.
 
