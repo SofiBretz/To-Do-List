@@ -19,8 +19,12 @@
     font-size: 1.5rem;
     background-color: var(--clr-primary);
     color: var(--clr-light);
+  
     display: grid;
-    grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+    grid:
+      "header header header header" auto
+      "...... lists  active ......" auto /
+      1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
   }
   
   .title {
@@ -93,20 +97,9 @@
     font-size: inherit;
     outline: none;
     padding: 0.25em;
+  
     transition: border-bottom 150ms ease-in;
     order: 2;
-  }
-  
-  .new::-webkit-input-placeholder {
-    opacity: 0.4;
-  }
-  
-  .new:-ms-input-placeholder {
-    opacity: 0.4;
-  }
-  
-  .new::-ms-input-placeholder {
-    opacity: 0.4;
   }
   
   .new::placeholder {
@@ -115,18 +108,6 @@
   
   .new:focus {
     border-bottom-width: 3px;
-  }
-  
-  .new:focus::-webkit-input-placeholder {
-    opacity: 0.15;
-  }
-  
-  .new:focus:-ms-input-placeholder {
-    opacity: 0.15;
-  }
-  
-  .new:focus::-ms-input-placeholder {
-    opacity: 0.15;
   }
   
   .new:focus::placeholder {
@@ -147,6 +128,7 @@
   
   .todo-list {
     --spacer: 2rem;
+  
     grid-area: active;
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -214,17 +196,13 @@
     cursor: pointer;
     border: 2px solid currentColor;
     border-radius: 50%;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    transition: -webkit-transform 300ms ease-in-out;
+    transform: scale(1);
     transition: transform 300ms ease-in-out;
-    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
   }
   
   .task:hover .custom-checkbox,
   [type="checkbox"]:focus + label .custom-checkbox {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
     color: var(--clr-primary);
   }
   
@@ -247,20 +225,14 @@
     top: 50%;
     height: 3px;
     background: currentColor;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transform-origin: right;
-            transform-origin: right;
-    transition: -webkit-transform 150ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: right;
     transition: transform 150ms ease-in-out;
-    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
   }
   
   [type="checkbox"]:checked + label::after {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    -webkit-transform-origin: left;
-            transform-origin: left;
+    transform: scaleX(1);
+    transform-origin: left;
   }
   
   .delete-stuff {
@@ -272,4 +244,3 @@
     bottom: -35px;
     color: var(--clr-light);
   }
-  
