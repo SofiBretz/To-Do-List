@@ -1,10 +1,10 @@
 # To-Do-List
 
->To Do List, creating modules on javascript using webpack.
+>To Do List, creating modules on javascript using webpack, localStorage and adding dynamic event listeners.
 
 ![screenshot]()
 
-The main goal of this project is understanding of the benefits of modularized code as well as the ability to set up a javascript application made of different modules using webpack.
+The main goal of this project is understanding of the benefits of modularized code as well as the ability to set up a javascript application made of different modules using webpack and localStorage to persist the website data.
 
 ## Built With
 
@@ -13,6 +13,7 @@ The main goal of this project is understanding of the benefits of modularized co
 - Bootstrap
 - JavaScript
 - Webpack
+- LocalStorage
 
 ## Live Demo
 
@@ -54,7 +55,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Inspiration: "Restaurant Page Project" on The Odin Project site.(https://www.theodinproject.com/courses/javascript/lessons/restaurant-page)
+- Inspiration: "Todo List Project" on The Odin Project site.(https://www.theodinproject.com/courses/javascript/lessons/todo-list)
 
 ## 📝 License
 
