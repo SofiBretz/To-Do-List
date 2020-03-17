@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/style.css">
-    <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer src="index.js"></script>
     <title>To Do List</title>
 </head>
 <body>
@@ -17,15 +14,16 @@
     <div class="all-tasks">
       <h2 class="task-list-title">My lists</h2>
       <ul class="task-list" data-lists>
-      <li class="list-name active-list">Coding</li>
+      <!-- <li class="list-name active-list">Coding</li>
         <li class="list-name">Work</li>
-        <li class="list-name">Grocery</li> 
+        <li class="list-name">Grocery</li>  -->
       </ul>
 
-      <form action="">
+      <form action="" data-new-list-form>
         <input 
           type="text"
           class="new list"
+          data-new-list-input
           placeholder="new list name"
           aria-label="new list name"
         />
