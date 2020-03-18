@@ -140,6 +140,10 @@
   .new.task {
     margin-bottom: 0;
   }
+
+  .new.task.description {
+    margin-left: 10px;
+  }
   
   .active-list {
     font-weight: 700;
@@ -150,6 +154,8 @@
     grid-area: active;
     background: var(--clr-light);
     color: var(--clr-dark);
+    width: 700px;
+    
   }
   
   .todo-header {
@@ -158,6 +164,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 700px;
   }
   
   .list-title {

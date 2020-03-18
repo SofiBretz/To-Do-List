@@ -29,8 +29,8 @@
 
     <div class="todo-list" data-list-display-container>
       <div class="todo-header">
-        <h2 class="list-title" data-list-title>Coding</h2>
-        <p class="task-count" data-list-count>3 tasks remaining</p>
+        <h2 class="list-title" data-list-title>Coding Morning</h2>
+        <p class="task-count" data-list-count>0 tasks remaining</p>
       </div>
 
       <div class="todo-body">
@@ -44,9 +44,18 @@
                   class="new task"
                   placeholder="new task name"
                   aria-label="new task name"
-                />
+                />        
                 <button class="btn create" aria-label="create new task">+</button>
               </form>
+              <textarea id="w3mission" rows="4" cols="50">
+                Description
+                </textarea>
+              <input type="date" id="date" name="date">
+              <select id="priority">
+                <option value="HIGH">HIGH</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="LOW">LOW</option>
+              </select>
         </div>
 
         <div class="delete-stuff">
