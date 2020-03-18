@@ -12,6 +12,9 @@ const taskTemplate = document.getElementById("task-template");
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
+const priority = document.getElementById('priority')
+const date = document.getElementById('date')
+const description = document.getElementById('description')
 
 
 // localstorage creating key
@@ -64,8 +67,9 @@ newListForm.addEventListener("submit", e => {
 newTaskForm.addEventListener("submit", e => {
   e.preventDefault();
   const taskName = newTaskInput.value; //to type the name for the new task
-  if (taskName == null || taskName === "") return;
-  const task = createTask(taskName);
+  const desc =  description.value
+  if (taskName === null || taskName === "" && desc === null || desc === '') return;
+  const task = createTask(taskName, desc);
   newTaskInput.value = null;
   const selectedList = lists.find(list => list.id === selectedListId)
   selectedList.tasks.push(task)
@@ -79,10 +83,11 @@ function createList(name) {
     tasks: [] }
 }
 
-function createTask(name) {
+function createTask(name, description) {
   return {
     id: Date.now().toString(),
     name: name,
+    description: description,
     complete: false }
 }
 
@@ -123,6 +128,7 @@ function renderTasks(selectedList) {
     const label = taskElement.querySelector('label');
     label.htmlFor = task.id;
     label.append(task.name);
+    label.append(task.description)
     tasksContainer.appendChild(taskElement);
   });
 }
