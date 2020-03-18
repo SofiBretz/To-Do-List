@@ -68,8 +68,10 @@ newTaskForm.addEventListener("submit", e => {
   e.preventDefault();
   const taskName = newTaskInput.value; //to type the name for the new task
   const desc =  description.value
-  if (taskName === null || taskName === "" && desc === null || desc === '') return;
-  const task = createTask(taskName, desc);
+  const prior =  priority.value
+  const day =  date.value
+  if (taskName === null || taskName === "" && desc === null || desc === ''  && prior === null || prior === '' && day === null || day === '') return;
+  const task = createTask(taskName, desc, prior, day);
   newTaskInput.value = null;
   const selectedList = lists.find(list => list.id === selectedListId)
   selectedList.tasks.push(task)
@@ -83,11 +85,13 @@ function createList(name) {
     tasks: [] }
 }
 
-function createTask(name, description) {
+function createTask(name, description, priority, date) {
   return {
     id: Date.now().toString(),
     name: name,
     description: description,
+    priority: priority,
+    date: date,
     complete: false }
 }
 
@@ -129,6 +133,8 @@ function renderTasks(selectedList) {
     label.htmlFor = task.id;
     label.append(task.name);
     label.append(task.description)
+    label.append(task.priority)
+    label.append(task.date)
     tasksContainer.appendChild(taskElement);
   });
 }
