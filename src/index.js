@@ -15,6 +15,7 @@ const clearCompleteTasksButton = document.querySelector('[data-clear-complete-ta
 const priority = document.getElementById('priority')
 const date = document.getElementById('date')
 const description = document.getElementById('description')
+const btnTask = document.getElementById("addTask")
 
 
 // localstorage creating key
@@ -64,7 +65,7 @@ newListForm.addEventListener("submit", e => {
   saveAndRender();
 });
 
-newTaskForm.addEventListener("submit", e => {
+btnTask.addEventListener("click", e => {
   e.preventDefault();
   const taskName = newTaskInput.value; //to type the name for the new task
   const desc =  description.value
