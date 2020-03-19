@@ -16,6 +16,8 @@ const priority = document.getElementById('priority')
 const date = document.getElementById('date')
 const description = document.getElementById('description')
 const btnTask = document.getElementById("addTask")
+const allTasks = document.querySelectorAll('.task')
+console.log(allTasks)
 
 
 // localstorage creating key
@@ -40,6 +42,19 @@ tasksContainer.addEventListener('click', e => {
      selectedTask.complete = e.target.checked
      save()
      renderTaskCount(selectedList)
+  }  
+})
+
+tasksContainer.addEventListener('click', e => {
+  if(e.target.tagName.toLowerCase() === 'button') {
+    const selectedList = lists.find(list => list.id === selectedListId)
+    const selectedTask = selectedList.tasks.find(task => task.id ===
+      e.target.id)
+    /*  selectedTask.name */ 
+     console.log(e.textContent)
+/*      save()
+     renderTaskCount(selectedList)  */
+     console.log("it is working")
   }  
 })
 
@@ -78,6 +93,13 @@ btnTask.addEventListener("click", e => {
   selectedList.tasks.push(task)
   saveAndRender();
 });
+/* 
+allTasks.forEach((singleTask) => {
+  singleTask.addEventListener("click", e => {
+    const editTarget = e.target.tagName === 'BUTTON' 
+    console.log("target here", e.textContent)
+  })
+}) */
 
 function createList(name) {
   return {
