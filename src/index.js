@@ -49,14 +49,34 @@ tasksContainer.addEventListener('click', e => {
   if(e.target.tagName.toLowerCase() === 'button') {
     const selectedList = lists.find(list => list.id === selectedListId)
     const selectedTask = selectedList.tasks.find(task => task.id ===
-      e.target.id)
-    /*  selectedTask.name */ 
-     console.log(e.textContent)
+      e.target.parentElement.childNodes[1].id) //e.target.parentElement.childNodes[1].id
+    selectedTask.updateForm 
+      updateForm(selectedTask);
+      console.log(selectedListId)
+      console.log(lists)
+
+      e.target.parentElement.remove()
 /*      save()
      renderTaskCount(selectedList)  */
      console.log("it is working")
+     console.log(selectedTask)
+    
+     for (let list of lists) {
+       if (parseInt(list.id) == selectedListId) {
+        console.log(list.tasks)
+        list.tasks.filter
+        //remove the task from the store and save, and when i finish editing i added again.
+       }
+     }
   }  
 })
+
+function updateForm(task){
+  document.getElementById('newTaskName').value= task.name
+  document.getElementById('description').value= task.description
+  document.getElementById('date').value= task.date
+  document.getElementById('priority').value= task.priority
+}
 
 clearCompleteTasksButton.addEventListener('click', e => {
   const selectedList = lists.find(list => list.id === selectedListId)
