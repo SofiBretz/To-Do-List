@@ -38,12 +38,17 @@ const renderTasks = (selectedList) => {
     const checkbox = taskElement.querySelector('input');
     checkbox.id = task.id;
     checkbox.checked = task.complete;
-    const label = taskElement.querySelector('label');
+    const label = taskElement.querySelector('[data-label]');
+    const labelName = taskElement.querySelector('[label-name]');
+    const labelDesc = taskElement.querySelector('[label-description]');
+    const labelDate = taskElement.querySelector('[label-date]');
+    const labelPrior = taskElement.querySelector('[label-priority]');
+
     label.htmlFor = task.id;
-    label.append(task.name);
-    label.append(task.description);
-    label.append(task.priority);
-    label.append(task.date);
+    labelName.append(task.name);
+    labelDesc.append(task.description);
+    labelPrior.append(task.priority);
+    labelDate.append(task.date);
     tasksContainer.appendChild(taskElement);
   });
 };
