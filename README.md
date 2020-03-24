@@ -1,6 +1,6 @@
 # To-Do-List
 
->To Do List, creating modules on javascript using webpack, localStorage and adding dynamic event listeners.
+> To Do List, creating modules on javascript using webpack, localStorage and adding dynamic event listeners.
 
 ![screenshot]()
 

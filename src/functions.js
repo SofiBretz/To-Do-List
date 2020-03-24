@@ -1,19 +1,19 @@
-const getTask = (task) => {
+const getTask = task => {
   document.getElementById('newTaskName').value = task.name;
   document.getElementById('description').value = task.description;
   document.getElementById('date').value = task.date;
   document.getElementById('priority').value = task.priority;
 };
 
-const clearElement = (element) => {
+const clearElement = element => {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 };
 
-const renderTaskCount = (selectedList) => {
+const renderTaskCount = selectedList => {
   const listCountElement = document.querySelector('[data-list-count]');
-  const incompleteTaskCount = selectedList.tasks.filter((task) => !task.complete)
+  const incompleteTaskCount = selectedList.tasks.filter(task => !task.complete)
     .length;
   const taskString = incompleteTaskCount === 1 ? 'task' : 'tasks';
   listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`;
@@ -30,10 +30,10 @@ const updateTodo = (list, task) => {
   getList.tasks[indexTask] = task;
 };
 
-const renderTasks = (selectedList) => {
+const renderTasks = selectedList => {
   const taskTemplate = document.getElementById('task-template');
   const tasksContainer = document.querySelector('[data-tasks]');
-  selectedList.tasks.forEach((task) => {
+  selectedList.tasks.forEach(task => {
     const taskElement = document.importNode(taskTemplate.content, true);
     const checkbox = taskElement.querySelector('input');
     checkbox.id = task.id;
@@ -50,7 +50,7 @@ const renderTasks = (selectedList) => {
 
 const renderLists = (lists, selectedListId) => {
   const listsContainer = document.querySelector('[data-lists]');
-  lists.forEach((list) => {
+  lists.forEach(list => {
     const listElement = document.createElement('li');
     listElement.dataset.listId = list.id;
     listElement.classList.add('list-name');
@@ -62,10 +62,10 @@ const renderLists = (lists, selectedListId) => {
   });
 };
 
-const createList = (name) => ({
+const createList = name => ({
   id: Date.now().toString(),
   name,
-  tasks: [],
+  tasks: []
 });
 
 const createTask = (name, description, priority, date) => ({
@@ -74,9 +74,8 @@ const createTask = (name, description, priority, date) => ({
   description,
   priority,
   date,
-  complete: false,
+  complete: false
 });
-
 
 export {
   getTask,
@@ -86,5 +85,5 @@ export {
   createTask,
   updateTodo,
   renderTasks,
-  renderLists,
+  renderLists
 };

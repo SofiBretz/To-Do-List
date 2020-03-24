@@ -6,7 +6,7 @@ import {
   renderTasks,
   renderLists,
   createTask,
-  createList,
+  createList
 } from './functions';
 
 const listsContainer = document.querySelector('[data-lists]');
@@ -14,14 +14,14 @@ const newListForm = document.querySelector('[data-new-list-form]');
 const newListInput = document.querySelector('[data-new-list-input]');
 const deleteListButton = document.querySelector('[data-delete-list-button]');
 const listDisplayContainer = document.querySelector(
-  '[data-list-display-container]',
+  '[data-list-display-container]'
 );
 const listTitleElement = document.querySelector('[data-list-title]');
 const tasksContainer = document.querySelector('[data-tasks]');
 
 const newTaskInput = document.querySelector('[data-new-task-input]');
 const clearCompleteTasksButton = document.querySelector(
-  '[data-clear-complete-tasks-button]',
+  '[data-clear-complete-tasks-button]'
 );
 const priority = document.getElementById('priority');
 const date = document.getElementById('date');
@@ -33,19 +33,15 @@ const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId';
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
 const save = () => {
-  localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(
-  lists
-  ));
-  localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY,
-    selectedListId);
+  localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists));
+  localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId);
 };
-
 
 const render = () => {
   clearElement(listsContainer);
   renderLists(lists, selectedListId);
 
-  const selectedList = lists.find((list) => list.id === selectedListId);
+  const selectedList = lists.find(list => list.id === selectedListId);
   if (selectedListId == null) {
     listDisplayContainer.style.display = 'none';
   } else {
@@ -62,18 +58,18 @@ const saveAndRender = () => {
   render();
 };
 
-listsContainer.addEventListener('click', (e) => {
+listsContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'li') {
     selectedListId = e.target.dataset.listId;
     saveAndRender();
   }
 });
 
-tasksContainer.addEventListener('click', (e) => {
+tasksContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'input') {
-    const selectedList = lists.find((list) => list.id === selectedListId);
+    const selectedList = lists.find(list => list.id === selectedListId);
     const selectedTask = selectedList.tasks.find(
-      (task) => task.id === e.target.id,
+      task => task.id === e.target.id
     );
     selectedTask.complete = e.target.checked;
     save();
@@ -81,11 +77,11 @@ tasksContainer.addEventListener('click', (e) => {
   }
 });
 
-tasksContainer.addEventListener('click', (e) => {
+tasksContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'button') {
-    const selectedList = lists.find((list) => list.id === selectedListId);
+    const selectedList = lists.find(list => list.id === selectedListId);
     const selectedTask = selectedList.tasks.find(
-      (task) => task.id === e.target.parentElement.childNodes[1].id,
+      task => task.id === e.target.parentElement.childNodes[1].id
     );
     getTask(selectedTask);
     e.target.parentElement.remove();
@@ -101,18 +97,18 @@ tasksContainer.addEventListener('click', (e) => {
 });
 
 clearCompleteTasksButton.addEventListener('click', () => {
-  const selectedList = lists.find((list) => list.id === selectedListId);
-  selectedList.tasks = selectedList.tasks.filter((task) => !task.complete);
+  const selectedList = lists.find(list => list.id === selectedListId);
+  selectedList.tasks = selectedList.tasks.filter(task => !task.complete);
   saveAndRender();
 });
 
 deleteListButton.addEventListener('click', () => {
-  lists = lists.filter((list) => list.id !== selectedListId);
+  lists = lists.filter(list => list.id !== selectedListId);
   selectedListId = null;
   saveAndRender();
 });
 
-newListForm.addEventListener('submit', (e) => {
+newListForm.addEventListener('submit', e => {
   e.preventDefault();
   const listName = newListInput.value;
   if (listName == null || listName === '') return;
@@ -122,22 +118,23 @@ newListForm.addEventListener('submit', (e) => {
   saveAndRender();
 });
 
-btnTask.addEventListener('click', (e) => {
+btnTask.addEventListener('click', e => {
   e.preventDefault();
   const taskName = newTaskInput.value;
   const desc = description.value;
   const prior = priority.value;
   const day = date.value;
   if (
-    taskName === null
-    || (taskName === '' && desc === null)
-    || (desc === '' && prior === null)
-    || (prior === '' && day === null)
-    || day === ''
-  ) return;
+    taskName === null ||
+    (taskName === '' && desc === null) ||
+    (desc === '' && prior === null) ||
+    (prior === '' && day === null) ||
+    day === ''
+  )
+    return;
   const task = createTask(taskName, desc, prior, day);
   newTaskInput.value = null;
-  const selectedList = lists.find((list) => list.id === selectedListId);
+  const selectedList = lists.find(list => list.id === selectedListId);
   selectedList.tasks.push(task);
   saveAndRender();
 });
