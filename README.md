@@ -2,7 +2,7 @@
 
 > To Do List, creating modules on javascript using webpack, localStorage and adding dynamic event listeners.
 
-![screenshot](https://i.imgur.com/SLJzyil.png)
+![screenshot](https://i.imgur.com/HWL8WMm.png
 
 The main goal of this project is understanding of the benefits of modularized code as well as the ability to set up a javascript application made of different modules using webpack and localStorage to persist the website data.
 
