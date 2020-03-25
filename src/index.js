@@ -139,4 +139,28 @@ btnTask.addEventListener('click', (e) => {
   saveAndRender();
 });
 
+
+const defaultList = () => {
+  const list = createList('Create a To-Do List');
+  if (lists.length === 0) {
+    lists.push(list);
+    const taskName = 'Create a To-Do List';
+    const desc = 'Decription Task Here';
+    const prior = 'Priority Here';
+    const day = 'Date Here';
+    if (
+      taskName === null
+    || (taskName === '' && desc === null)
+    || (desc === '' && prior === null)
+    || (prior === '' && day === null)
+    || day === ''
+    ) return;
+    const task = createTask(taskName, desc, prior, day);
+    lists[0].tasks.push(task);
+    renderLists(lists, selectedListId);
+    saveAndRender();
+  }
+};
+
+defaultList();
 render();
