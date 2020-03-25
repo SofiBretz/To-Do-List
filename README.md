@@ -17,7 +17,7 @@ The main goal of this project is understanding of the benefits of modularized co
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://rawcdn.githack.com/SofiBretz/To-Do-List/56a02b6fa2f9e1e1bce9ae9e6530fe7aa864df22/dist/index.html)
 
 ## Getting Started
 
@@ -31,9 +31,13 @@ The main goal of this project is understanding of the benefits of modularized co
 
 ### Install
 
-- Install npm and webpack commands.
 - Install a text editor (if you don't have already).
 - Clone the project to your computer.
+
+
+### Dev Dependencies
+
+- Install npm and webpack commands.
 
 ## Authors
 
