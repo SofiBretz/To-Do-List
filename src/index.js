@@ -145,7 +145,7 @@ const defaultList = () => {
   if (lists.length === 0) {
     lists.push(list);
     const taskName = 'Task';
-    const desc = 'Decription';
+    const desc = 'Description';
     const prior = 'Priority';
     const day = 'Date';
     if (
