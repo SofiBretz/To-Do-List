@@ -1,0 +1,51 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "to do list application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --mode=development --open",
+    "lint": "eslint ./js/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SofiBretz/To-Do-List.git"
+  },
+  "author": "SofiBretz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SofiBretz/To-Do-List/issues"
+  },
+  "homepage": "https://github.com/SofiBretz/To-Do-List#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset": "^1.1.4",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "file-loader": "^5.1.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "webpack-cli": "^3.3.11",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.42.0",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  },
+  "keywords": []
+}

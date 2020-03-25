@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer src="../src/index.js"></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <h1 class="title">To Do List</h1>
+
+    <div class="all-tasks">
+      <h2 class="task-list-title">My lists</h2>
+      <ul class="task-list" data-lists></ul>
+
+      <form action="" data-new-list-form>
+        <input 
+          type="text"
+          class="new list"
+          data-new-list-input
+          placeholder="new list name"
+          aria-label="new list name"
+        />
+        <button class="btn create" aria-label="create new list">+</button>
+      </form>
+    </div>
+
+    <div class="todo-list" data-list-display-container>
+      <div class="todo-header">
+        <h2 class="list-title" data-list-title>Create a To-Do Task</h2>
+        <p class="task-count" data-list-count>0 tasks remaining</p>
+      </div>
+
+      <div class="todo-body">
+        <div class="tasks" data-tasks></div>
+
+        <div class="new-task-creator">
+            <form action="" data-new-task-form>
+                <input 
+                  type="text"
+                  data-new-task-input
+                  class="new task"
+                  placeholder="new task name"
+                  id="newTaskName"
+                  aria-label="new task name"
+                />        
+                
+              </form>
+              <textarea id="description" rows="4" cols="50"></textarea>
+              <input type="date" id="date" name="date">
+              <select id="priority">
+                <option value="HIGH" class='high'>HIGH</option>
+                <option value="MEDIUM" class='medium'>MEDIUM</option>
+                <option value="LOW" class='low'>LOW</option>
+              </select>
+              <button class="btn create" id="addTask" aria-label="create new task">+ Add Task</button>
+              <button class="btn create hide" id="updateTask" aria-label="update task">Update Task</button>
+        </div>
+
+        <div class="delete-stuff">
+          <button class="btn delete clear" data-clear-complete-tasks-button>Clear Completed Tasks</button>
+          <button class="btn delete deletelist" data-delete-list-button>Delete To-Do List</button>
+        </div>
+      </div>
+    </div>
+
+   
+    </div>
+   
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox"/>
+        <label data-label>
+          <span class="custom-checkbox"></span>
+          <span class='labelName' label-name></span>
+          <span class='labelDesc' label-description></span>
+          <span class='labelDate' label-date></span>
+          <span class='labelPrior' label-priority></span>
+        </label>
+        <button class="edit">Edit</button>
+      </div>
+    </template>
+    <script src='main.js'></script>
+</body>
+</html>
