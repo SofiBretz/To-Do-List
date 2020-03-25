@@ -144,10 +144,10 @@ const defaultList = () => {
   const list = createList('Create a To-Do List');
   if (lists.length === 0) {
     lists.push(list);
-    const taskName = 'Create a To-Do List';
-    const desc = 'Decription Task Here';
-    const prior = 'Priority Here';
-    const day = 'Date Here';
+    const taskName = 'Task';
+    const desc = 'Decription';
+    const prior = 'Priority';
+    const day = 'Date';
     if (
       taskName === null
     || (taskName === '' && desc === null)
