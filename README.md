@@ -17,7 +17,7 @@ The main goal of this project is understanding of the benefits of modularized co
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/SofiBretz/To-Do-List/56a02b6fa2f9e1e1bce9ae9e6530fe7aa864df22/dist/index.html)
+[Live Demo Link](https://rawcdn.githack.com/SofiBretz/To-Do-List/38cb1b4a07c140292dc4e350b0023335fe8ca0c5/dist/index.html)
 
 ## Getting Started
 
