@@ -73,8 +73,8 @@ form {
 .btn.create {
   font-size: 22px;
   font-weight: 900;
-
   transition: opacity 250ms ease-in;
+  color: #c2e3d9;
 }
 
 .btn.create:hover {
@@ -94,6 +94,32 @@ form {
 
 .btn.delete:hover {
   color: var(--clr-warning);
+}
+
+.btn.delete.clear {
+  opacity: 0.7;
+  font-size: 18px;
+  transition: color 200ms;
+  color: #ffddb0;
+}
+
+.btn.delete.deletelist {
+  opacity: 0.7;
+  font-size: 18px;
+  transition: color 200ms;
+  color: #99413c;
+}
+
+.btn.delete.clear:hover {
+  color: #ffff66;
+}
+
+.btn.delete.deletelist:hover {
+  color: #ff1919;
+}
+
+h2.list-title {
+  color: #303a43;
 }
 
 .new {
@@ -168,11 +194,12 @@ form {
   width: 700px;
   border-radius: 20px;
   margin-left: 25px;
+  background-color: #e6f5f4;
 }
 
 .todo-header {
   padding: var(--spacer);
-  background: #e4e4e4;
+  background-color: #cfdcdb;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -250,8 +277,8 @@ form {
 }
 
 [type='checkbox']:checked + label .custom-checkbox {
-  background: var(--clr-primary);
-  border-color: var(--clr-primary);
+  background: #307e91;
+  border-color: #307e91;
   box-shadow: inset 0 0 0px 2px white;
 }
 
@@ -300,6 +327,7 @@ form {
 #priority {
   border-radius: 5px;
   width: 120px;
+  background-color: #cfdcdb;
 }
 
 .hide {
@@ -314,4 +342,52 @@ form {
   left: 0;
   bottom: -35px;
   color: var(--clr-light);
+}
+
+.edit {
+  border-radius: 8px;
+  background-color: #daeee8;
+  opacity: 0.6;
+}
+
+.edit:hover {
+  background-color: #9ad1c0;
+}
+
+button.edit {
+  border-bottom-color: #9ad1c0;
+  border-right-color: #9ad1c0;
+  border-top-color: #c2e3d9;
+  border-left-color: #c2e3d9;
+}
+
+.labelName {
+  color: #19444e;
+  background-color: #c8e5dc;
+  opacity: 0.6;
+  border-radius: 5px;
+}
+
+.labelDesc {
+  color: #19444e;
+}
+
+.labelDate {
+  color: #19444e;
+}
+
+.task .labelPrior {
+  color: #2b7283;
+}
+
+.high {
+  background-color: #ffb5b0;
+}
+
+.medium {
+  background-color: #ffddb0;
+}
+
+.low {
+  background-color: #e5f3df;
 }

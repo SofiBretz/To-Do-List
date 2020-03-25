@@ -51,17 +51,17 @@
               <textarea id="description" rows="4" cols="50"></textarea>
               <input type="date" id="date" name="date">
               <select id="priority">
-                <option value="HIGH">HIGH</option>
-                <option value="MEDIUM">MEDIUM</option>
-                <option value="LOW">LOW</option>
+                <option value="HIGH" class='high'>HIGH</option>
+                <option value="MEDIUM" class='medium'>MEDIUM</option>
+                <option value="LOW" class='low'>LOW</option>
               </select>
               <button class="btn create" id="addTask" aria-label="create new task">+ Add Task</button>
               <button class="btn create hide" id="updateTask" aria-label="update task">Update Task</button>
         </div>
 
         <div class="delete-stuff">
-          <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-          <button class="btn delete" data-delete-list-button>Delete list</button>
+          <button class="btn delete clear" data-clear-complete-tasks-button>Clear Completed Tasks</button>
+          <button class="btn delete deletelist" data-delete-list-button>Delete To-Do List</button>
         </div>
       </div>
     </div>
@@ -74,10 +74,10 @@
         <input type="checkbox"/>
         <label data-label>
           <span class="custom-checkbox"></span>
-          <span label-name></span>
-          <span label-description></span>
-          <span label-date></span>
-          <span label-priority></span>
+          <span class='labelName' label-name></span>
+          <span class='labelDesc' label-description></span>
+          <span class='labelDate' label-date></span>
+          <span class='labelPrior' label-priority></span>
         </label>
         <button class="edit">Edit</button>
       </div>
