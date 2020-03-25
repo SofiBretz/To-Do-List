@@ -1,0 +1,11 @@
+/*! exports provided: getTask, clearElement, renderTaskCount, createList, createTask, updateTodo, renderTasks, renderLists */
+
+/*! no exports provided */
+
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+
+/*!**************************!*\
+  !*** ./src/functions.js ***!
+  \**************************/
